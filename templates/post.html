@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Replies</title>
+</head>
+<body>
+    <a href="/">← Back</a>
+    <h2>Original Post</h2>
+    <p>{{ post[1] }}</p>
+    <small>{{ post[2] }}</small>
+    <hr>
+    <h3>Replies</h3>
+    <form method="post">
+        <textarea name="reply" placeholder="Write a reply..." required></textarea>
+        <br>
+        <button type="submit">Send</button>
+    </form>
+    {% for reply in replies %}
+        <div>
+            <p>{{ reply[2] }}</p>
+            <small>{{ reply[3] }}</small>
+        </div>
+    {% endfor %}
+</body>
+</html>

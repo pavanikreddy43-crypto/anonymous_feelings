@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FeelShare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Anonymous Feelings Board</h1>
+    <form action="/post" method="post">
+        <textarea name="text" placeholder="Share your feelings..." required></textarea>
+        <br>
+        <button type="submit">Post</button>
+    </form>
+    <hr>
+    {% for post in posts %}
+        <div class="post">
+            <p>{{ post[1] }}</p>
+            <small>{{ post[2] }}</small><br>
+            <a href="/post/{{ post[0] }}">View & Reply</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
